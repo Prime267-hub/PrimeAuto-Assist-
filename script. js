@@ -1,0 +1,11 @@
+// Simple stub for future features
+console.log("PrimeAuto Assist loaded");
+
+// Hooking search button (placeholder behavior)
+const searchBtn = document.querySelector(".search-btn");
+
+if (searchBtn) {
+  searchBtn.addEventListener("click", () => {
+    alert("Search functionality coming soon — listings will be filtered here.");
+  });
+}
