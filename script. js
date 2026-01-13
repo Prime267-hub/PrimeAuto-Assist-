@@ -1,11 +1,35 @@
-// Simple stub for future features
-console.log("PrimeAuto Assist loaded");
+console.log("PrimeAuto Assist loaded 🚗");
 
-// Hooking search button (placeholder behavior)
-const searchBtn = document.querySelector(".search-btn");
+async function loadCars() {
+  try {
+    const res = await fetch('cars.json');
+    const cars = await res.json();
 
-if (searchBtn) {
-  searchBtn.addEventListener("click", () => {
-    alert("Search functionality coming soon — listings will be filtered here.");
-  });
+    const container = document.getElementById("listing-area");
+    container.innerHTML = "";
+
+    cars.forEach(car => {
+      const card = document.createElement("div");
+      card.className = "car-card";
+
+      card.innerHTML = `
+        <img src="${car.image}" alt="${car.title}">
+        <div class="car-info">
+          <h3>${car.title}</h3>
+          <p class="price">N$ ${car.price.toLocaleString()}</p>
+          <p>${car.year} • ${car.mileage.toLocaleString()} km</p>
+          <p>${car.location}</p>
+          <p>${car.notes}</p>
+          <a class="btn-primary" href="https://wa.me/264857746291?text=Hi%20PrimeAuto%20Assist%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(car.title)}">WhatsApp Seller</a>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error("Error loading cars", err);
+  }
 }
+
+document.addEventListener("DOMContentLoaded", loadCars);
