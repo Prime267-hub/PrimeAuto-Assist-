@@ -139,3 +139,27 @@ footer {
   border-top: 1px solid #222;
   background: #000;
 }
+
+.admin-form {
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.admin-form input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+.admin-form button {
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+#adminCarList div {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
