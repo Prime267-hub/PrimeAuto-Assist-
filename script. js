@@ -33,3 +33,44 @@ async function loadCars() {
 }
 
 document.addEventListener("DOMContentLoaded", loadCars);
+
+let adminCars = [];
+
+fetch("cars.json")
+  .then(res => res.json())
+  .then(data => {
+    adminCars = data;
+    renderAdminCars();
+  });
+
+function renderAdminCars() {
+  const container = document.getElementById("adminCarList");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  adminCars.forEach((car, index) => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <strong>${car.name}</strong><br>
+      ${car.price} | ${car.year} | ${car.km}<br>
+      ${car.features}
+    `;
+    container.appendChild(div);
+  });
+}
+
+function addCar() {
+  const car = {
+    name: document.getElementById("make").value,
+    price: document.getElementById("price").value,
+    year: document.getElementById("year").value,
+    km: document.getElementById("km").value,
+    features: document.getElementById("features").value
+  };
+
+  adminCars.push(car);
+  renderAdminCars();
+
+  alert("Car added (locally). Remember: this does not save to JSON yet.");
+}
