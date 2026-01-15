@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PrimeAuto Assist – Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>PrimeAuto Assist</h1>
+  <p>Admin Dashboard</p>
+</header>
+
+<section id="loginSection">
+  <h2>Admin Login</h2>
+  <input type="password" id="adminPassword" placeholder="Enter admin password">
+  <button onclick="login()">Login</button>
+</section>
+
+<section id="adminPanel" style="display:none;">
+  <h2>Manage Listings</h2>
+
+  <form id="addCarForm">
+    <input placeholder="Title" id="title" required>
+    <input placeholder="Brand" id="brand" required>
+    <input placeholder="Price" id="price" type="number" required>
+    <input placeholder="Mileage" id="mileage" type="number">
+    <input placeholder="Image filename (e.g. golf7.jpg)" id="image">
+    <textarea placeholder="Notes" id="notes"></textarea>
+
+    <label>
+      <input type="checkbox" id="featured"> Featured
+    </label>
+
+    <button type="submit">Add Car</button>
+  </form>
+
+  <hr>
+
+  <div id="adminCars"></div>
+</section>
+
+<script src="admin.js"></script>
+</body>
+</html>
