@@ -1,79 +1,62 @@
-const ADMIN_PASSWORD = "prime2024"; // change later
+const ADMIN_PASSWORD = "admin123"; // change later
 
-let cars = [];
+const loginSection = document.getElementById("loginSection");
+const adminPanel = document.getElementById("adminPanel");
+const adminCars = document.getElementById("adminCars");
+const form = document.getElementById("addCarForm");
+
+let cars = JSON.parse(localStorage.getItem("cars")) || [];
 
 function login() {
   const input = document.getElementById("adminPassword").value;
+
   if (input === ADMIN_PASSWORD) {
-    document.getElementById("loginSection").style.display = "none";
-    document.getElementById("adminPanel").style.display = "block";
-    loadCars();
+    loginSection.style.display = "none";
+    adminPanel.style.display = "block";
+    renderCars();
   } else {
-    alert("Wrong password");
+    alert("Wrong password. Try again.");
   }
 }
 
-function loadCars() {
-  fetch("cars.json")
-    .then(res => res.json())
-    .then(data => {
-      cars = data;
-      renderAdminCars();
-    });
-}
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-function renderAdminCars() {
-  const container = document.getElementById("adminCars");
-  container.innerHTML = "";
+  const car = {
+    title: title.value,
+    brand: brand.value,
+    price: price.value,
+    mileage: mileage.value,
+    image: image.value,
+    notes: notes.value,
+    featured: featured.checked
+  };
+
+  cars.push(car);
+  localStorage.setItem("cars", JSON.stringify(cars));
+  form.reset();
+  renderCars();
+});
+
+function renderCars() {
+  adminCars.innerHTML = "";
 
   cars.forEach((car, index) => {
-    container.innerHTML += `
-      <div class="car">
-        <h3>${car.title}</h3>
-        <p>N$${car.price} | ${car.brand}</p>
-        <p>Featured: ${car.featured ? "YES" : "NO"}</p>
-        <button onclick="toggleFeatured(${index})">Toggle Featured</button>
+    adminCars.innerHTML += `
+      <div class="admin-car">
+        <strong>${car.title}</strong> (${car.brand})<br>
+        N$ ${car.price} | ${car.mileage} km<br>
+        ${car.featured ? "⭐ Featured" : ""}
+        <br>
         <button onclick="deleteCar(${index})">Delete</button>
+        <hr>
       </div>
     `;
   });
 }
 
-function toggleFeatured(index) {
-  cars[index].featured = !cars[index].featured;
-  saveCars();
-}
-
 function deleteCar(index) {
-  if (confirm("Delete this car?")) {
-    cars.splice(index, 1);
-    saveCars();
-  }
-}
-
-document.getElementById("addCarForm").addEventListener("submit", e => {
-  e.preventDefault();
-
-  const newCar = {
-    id: Date.now(),
-    title: title.value,
-    brand: brand.value,
-    price: Number(price.value),
-    mileage: Number(mileage.value),
-    notes: notes.value,
-    image: image.value || "default.jpg",
-    featured: featured.checked
-  };
-
-  cars.push(newCar);
-  saveCars();
-  e.target.reset();
-});
-
-function saveCars() {
-  alert(
-    "IMPORTANT:\n\nGitHub Pages cannot save files automatically.\n\nCopy the updated cars data from the console and paste it into cars.json manually."
-  );
-  console.log(JSON.stringify(cars, null, 2));
-  renderAdminCars();
+  cars.splice(index, 1);
+  localStorage.setItem("cars", JSON.stringify(cars));
+  renderCars();
 }
