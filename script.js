@@ -1,4 +1,9 @@
-fetch("cars.json")
+const storedCars = JSON.parse(localStorage.getItem("cars")) || [];
+const carsPromise = storedCars.length
+  ? Promise.resolve(storedCars)
+  : fetch("cars.json").then(res => res.json());
+
+carsPromise
   .then(res => res.json())
   .then(cars => {
     const listingArea = document.getElementById("listing-area");
