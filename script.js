@@ -1,29 +1,40 @@
-const storedCars = JSON.parse(localStorage.getItem("cars")) || [];
-const carsPromise = storedCars.length
-  ? Promise.resolve(storedCars)
-  : fetch("cars.json").then(res => res.json());
+const featuredContainer = document.getElementById("featuredCars");
 
-carsPromise
-  .then(res => res.json())
-  .then(cars => {
-    const listingArea = document.getElementById("listing-area");
-    listingArea.innerHTML = "";
+const cars =
+  JSON.parse(localStorage.getItem("cars"))?.length
+    ? JSON.parse(localStorage.getItem("cars"))
+    : [];
 
-    cars.forEach(car => {
-      const card = document.createElement("div");
-      card.className = "car-card";
+function renderCars(list) {
+  featuredContainer.innerHTML = "";
 
-      card.innerHTML = `
-        <img src="${car.image}" alt="${car.title}">
-        <div class="car-info">
-          <h3>${car.brand} ${car.title}</h3>
-          <p class="price">N$ ${car.price}</p>
-          <p>${car.notes}</p>
-          <a class="btn-primary" href="#">WhatsApp Seller</a>
-        </div>
-      `;
+  if (list.length === 0) {
+    featuredContainer.innerHTML = "<p style='color:#aaa'>No listings yet.</p>";
+    return;
+  }
 
-      listingArea.appendChild(card);
-    });
-  })
-  .catch(err => console.error("Error loading cars:", err));
+  list.forEach(car => {
+    const card = document.createElement("div");
+    card.className = "car-card";
+
+    card.innerHTML = `
+      <img src="${car.image}" alt="${car.brand}">
+      <div class="car-info">
+        <h3>${car.brand} ${car.title}</h3>
+        <p class="price">N$ ${car.price}</p>
+        <p>${car.notes}</p>
+        <a 
+          class="btn-primary" 
+          href="https://wa.me/264XXXXXXXXX?text=I'm interested in the ${car.brand} ${car.title}"
+          target="_blank"
+        >
+          WhatsApp Seller
+        </a>
+      </div>
+    `;
+
+    featuredContainer.appendChild(card);
+  });
+}
+
+renderCars(cars);
