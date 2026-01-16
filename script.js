@@ -38,3 +38,14 @@ function renderCars(list) {
 }
 
 renderCars(cars);
+
+function searchCars() {
+  const text = document.querySelector(".search-box input").value.toLowerCase();
+
+  const filtered = cars.filter(car =>
+    car.brand.toLowerCase().includes(text) ||
+    car.title.toLowerCase().includes(text)
+  );
+
+  renderCars(filtered);
+}
