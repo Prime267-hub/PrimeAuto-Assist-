@@ -7,7 +7,7 @@
     "status": "Roadworthy",
     "condition": "Used",
     "notes": "Slightly negotiable, service up to date, DSG, papers in order",
-    "image": "https://via.placeholder.com/400x300?text=PrimeAuto+Assist"
+    "image": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80"
   },
   {
     "title": "Nissan Note",
@@ -17,7 +17,7 @@
     "status": "Roadworthy",
     "condition": "Used",
     "notes": "Needs throttle body replacement, all papers in order",
-    "image": "https://via.placeholder.com/400x300?text=PrimeAuto+Assist"
+    "image": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80"
   },
   {
     "title": "Mercedes-Benz C-Class",
@@ -28,7 +28,7 @@
     "status": "Roadworthy",
     "condition": "Used",
     "notes": "Excellent condition, leather interior, automatic",
-    "image": "https://via.placeholder.com/400x300?text=PrimeAuto+Assist"
+    "image": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80"
   },
   {
     "title": "BMW 3 Series",
@@ -39,7 +39,7 @@
     "status": "Roadworthy",
     "condition": "Used",
     "notes": "M-Sport Package, Bluetooth, very clean",
-    "image": "https://via.placeholder.com/400x300?text=PrimeAuto+Assist"
+    "image": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80"
   },
   {
     "title": "Audi A4",
@@ -50,6 +50,6 @@
     "status": "Roadworthy",
     "condition": "Used",
     "notes": "Automatic, premium sound, sunroof",
-    "image": "https://via.placeholder.com/400x300?text=PrimeAuto+Assist"
+    "image": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80"
   }
 ]
