@@ -1,7 +1,7 @@
 fetch("cars.json")
   .then(response => response.json())
   .then(cars => {
-    const container = document.getElementById("cars-container");
+    const container = document.getElementById("listing-area");
 
     if (!container) return;
 
