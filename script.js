@@ -1,3 +1,5 @@
+alert("SCRIPT LOADED");
+
 const featuredContainer = document.getElementById("featuredCars");
 
 const cars =
