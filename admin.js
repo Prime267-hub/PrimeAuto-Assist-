@@ -1,51 +1,54 @@
-const form = document.getElementById("carForm");
-const adminListings = document.getElementById("adminListings");
+console.log("Admin dashboard loaded");
 
-let cars = JSON.parse(localStorage.getItem("cars")) || [];
+// Temporary in-memory car storage
+let cars = [];
 
+// DOM references
+const form = document.getElementById("add-car-form");
+const carList = document.getElementById("admin-car-list");
+
+// Render cars
 function renderCars() {
-  adminListings.innerHTML = "";
-
+  carList.innerHTML = "";
   cars.forEach((car, index) => {
-    const card = document.createElement("div");
-    card.className = "car-card";
-
-    card.innerHTML = `
-      <img src="${car.image}">
-      <div class="car-info">
-        <h3>${car.brand} ${car.title}</h3>
-        <p class="price">N$ ${car.price}</p>
-        <p>${car.notes}</p>
-        <button class="btn-primary" onclick="deleteCar(${index})">Delete</button>
-      </div>
+    const div = document.createElement("div");
+    div.className = "admin-car-card";
+    div.innerHTML = `
+      <p><strong>${car.make} ${car.model}</strong></p>
+      <p>Price: N$ ${car.price}</p>
+      <p>Year: ${car.year}</p>
+      <p>Mileage: ${car.mileage} km</p>
+      <p>City: ${car.city}</p>
+      <button onclick="deleteCar(${index})">Delete</button>
     `;
-
-    adminListings.appendChild(card);
+    carList.appendChild(div);
   });
 }
 
-function deleteCar(index) {
-  cars.splice(index, 1);
-  localStorage.setItem("cars", JSON.stringify(cars));
-  renderCars();
-}
-
-form.addEventListener("submit", e => {
+// Add car
+form.addEventListener("submit", function(e) {
   e.preventDefault();
-
-  const car = {
-    brand: brand.value,
-    title: title.value,
-    price: price.value,
-    image: image.value,
-    notes: notes.value
+  const newCar = {
+    make: document.getElementById("make").value,
+    model: document.getElementById("model").value,
+    price: Number(document.getElementById("price").value),
+    year: Number(document.getElementById("year").value),
+    mileage: Number(document.getElementById("mileage").value),
+    city: document.getElementById("city").value,
+    image: document.getElementById("image").value || ""
   };
-
-  cars.push(car);
-  localStorage.setItem("cars", JSON.stringify(cars));
-
-  form.reset();
+  cars.push(newCar);
   renderCars();
+  form.reset();
 });
 
+// Delete car
+function deleteCar(index) {
+  if(confirm("Are you sure you want to delete this car?")) {
+    cars.splice(index, 1);
+    renderCars();
+  }
+}
+
+// Initial render
 renderCars();
