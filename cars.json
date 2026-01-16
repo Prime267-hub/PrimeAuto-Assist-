@@ -1,37 +1,55 @@
 [
   {
-    "brand": "Volkswagen",
-    "title": "Golf 7",
-    "price": "185,000",
-    "notes": "Clean condition, all papers in order",
-    "image": "https://images.unsplash.com/photo-1617814076367-b759c7d7e738"
+    "title": "VW Golf 7 GTI",
+    "price": 229000,
+    "location": "Windhoek",
+    "mileage": 148000,
+    "status": "Roadworthy",
+    "condition": "Used",
+    "notes": "Slightly negotiable, service up to date, DSG, papers in order",
+    "image": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023"
   },
   {
-    "brand": "Nissan",
-    "title": "Note",
-    "price": "40,000",
-    "notes": "Roadworthy, needs throttle body replacement",
-    "image": "https://images.unsplash.com/photo-1549924231-f129b911e442"
+    "title": "Nissan Note",
+    "price": 40000,
+    "location": "Windhoek",
+    "mileage": 123000,
+    "status": "Roadworthy",
+    "condition": "Used",
+    "notes": "Needs throttle body replacement, all papers in order",
+    "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70"
   },
   {
-    "brand": "Mercedes-Benz",
-    "title": "C-Class",
-    "price": "320,000",
-    "notes": "Luxury sedan, placeholder",
-    "image": "https://images.unsplash.com/photo-1549921296-3caa2b63b0b9"
+    "title": "Mercedes-Benz C-Class",
+    "price": 285000,
+    "location": "Windhoek",
+    "year": 2016,
+    "mileage": 132000,
+    "status": "Roadworthy",
+    "condition": "Used",
+    "notes": "Excellent condition, leather interior, automatic",
+    "image": "https://images.unsplash.com/photo-1549923746-c502d488b3ea"
   },
   {
-    "brand": "BMW",
-    "title": "3 Series",
-    "price": "290,000",
-    "notes": "Sporty performance, placeholder",
-    "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e"
+    "title": "BMW 3 Series",
+    "price": 265000,
+    "location": "Windhoek",
+    "year": 2017,
+    "mileage": 125000,
+    "status": "Roadworthy",
+    "condition": "Used",
+    "notes": "M-Sport Package, Bluetooth, very clean",
+    "image": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c"
   },
   {
-    "brand": "Audi",
-    "title": "A4",
-    "price": "255,000",
-    "notes": "2015, automatic, sunroof, premium sound",
-    "image": "https://images.unsplash.com/photo-1614200187524-dc4b892acf16"
+    "title": "Audi A4",
+    "price": 255000,
+    "location": "Windhoek",
+    "year": 2015,
+    "mileage": 140000,
+    "status": "Roadworthy",
+    "condition": "Used",
+    "notes": "Automatic, premium sound, sunroof",
+    "image": "https://images.unsplash.com/photo-1518398046578-8cca57782e17"
   }
 ]
