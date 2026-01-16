@@ -2,45 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PrimeAuto Assist – Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | PrimeAuto Assist</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>PrimeAuto Assist</h1>
-  <p>Admin Dashboard</p>
-</header>
+  <nav class="navbar">
+    <div class="logo">PrimeAuto <span>Admin</span></div>
+  </nav>
 
-<section id="loginSection">
-  <h2>Admin Login</h2>
-  <input type="password" id="adminPassword" placeholder="Enter admin password">
-  <button onclick="login()">Login</button>
-</section>
+  <section class="section">
+    <h2 class="section-title">Add New Car Listing</h2>
 
-<section id="adminPanel" style="display:none;">
-  <h2>Manage Listings</h2>
+    <form id="carForm" class="admin-form">
+      <input type="text" id="brand" placeholder="Brand (e.g. Audi)" required>
+      <input type="text" id="title" placeholder="Model (e.g. A4)" required>
+      <input type="text" id="price" placeholder="Price (e.g. 255000)" required>
+      <input type="text" id="image" placeholder="Image URL" required>
+      <textarea id="notes" placeholder="Notes (year, mileage, extras)" required></textarea>
 
-  <form id="addCarForm">
-    <input placeholder="Title" id="title" required>
-    <input placeholder="Brand" id="brand" required>
-    <input placeholder="Price" id="price" type="number" required>
-    <input placeholder="Mileage" id="mileage" type="number">
-    <input placeholder="Image filename (e.g. golf7.jpg)" id="image">
-    <textarea placeholder="Notes" id="notes"></textarea>
+      <button type="submit" class="search-btn">Add Listing</button>
+    </form>
+  </section>
 
-    <label>
-      <input type="checkbox" id="featured"> Featured
-    </label>
+  <section class="section">
+    <h2 class="section-title">Current Listings</h2>
+    <div id="adminListings" class="card-grid"></div>
+  </section>
 
-    <button type="submit">Add Car</button>
-  </form>
-
-  <hr>
-
-  <div id="adminCars"></div>
-</section>
-
-<script src="admin.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>
