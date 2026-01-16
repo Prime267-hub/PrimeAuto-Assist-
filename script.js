@@ -1,5 +1,7 @@
 alert("SCRIPT LOADED");
 
+console.log(cars);
+
 const featuredContainer = document.getElementById("featuredCars");
 
 const cars =
