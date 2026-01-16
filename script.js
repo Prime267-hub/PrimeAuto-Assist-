@@ -30,4 +30,7 @@ fetch("cars.json")
   })
   .catch(error => {
     console.error("Error loading cars:", error);
+    <img src="${car.image}" 
+     alt="${car.make} ${car.model}"
+     onerror="this.src='https://via.placeholder.com/400x250?text=No+Image'">
   });
