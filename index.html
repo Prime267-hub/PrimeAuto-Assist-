@@ -2,244 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>PrimeAuto Assist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimeAuto Assist | Namibia</title>
 
-  <link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
-    }
-
-    /* Nav */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background: #000;
-      border-bottom: 1px solid #222;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      color: gold;
-      letter-spacing: 1px;
-    }
-
-    .nav-links a {
-      color: #ddd;
-      margin-left: 20px;
-      text-decoration: none;
-    }
-    .nav-links a:hover {
-      color: gold;
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.9)),
-      url('https://images.unsplash.com/photo-1503376780353-7e6692767b70');
-      background-size: cover;
-      background-position: center;
-      padding: 120px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      color: #ccc;
-      margin-bottom: 25px;
-    }
-
-    .search-box {
-      max-width: 900px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .search-box input, .search-box select {
-      padding: 12px;
-      background: #111;
-      border: 1px solid #333;
-      color: white;
-      border-radius: 6px;
-      width: 200px;
-    }
-
-    .search-btn {
-      padding: 12px 20px;
-      background: gold;
-      border: none;
-      color: black;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    /* Featured cars */
-    .section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .car-card {
-      background: #0f0f0f;
-      border: 1px solid #1f1f1f;
-      border-radius: 14px;
-      overflow: hidden;
-    }
-
-    .car-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .car-info {
-      padding: 15px;
-    }
-
-    .price {
-      color: gold;
-      font-weight: bold;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      padding: 10px 14px;
-      margin-top: 8px;
-      background: gold;
-      color: black;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Footer */
-    footer {
-      padding: 25px 10px;
-      text-align: center;
-      color: #aaa;
-      border-top: 1px solid #222;
-      background: #000; 
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
 
-  <div class="navbar">
-    <body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">PrimeAuto <span>Assist</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Buy a Car</a></li>
+      <li><a href="#">Sell a Car</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="navbar">
-  <div class="logo">PrimeAuto Assist</div>
-  <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">Buy a Car</a>
-    <a href="#">Sell a Car</a>
-    <a href="#">Contact</a>
-  </div>
-</div>
-
-<section class="featured">
-  <h2>Featured Listings</h2>
-  <p>Hand-picked rides from PrimeAuto Assist</p>
-
-  <div id="listing-area" class="card-grid">
-    <!-- Cars will load here automatically -->
-  </div>
-</section>
-      
-  <div class="hero">
+  <!-- HERO -->
+  <section class="hero">
     <h1>Find Your Next Ride</h1>
-    <p>Premium marketplace for cars in Namibia — black & gold treatment only.</p>
+    <p>Premium car marketplace for Namibia </p>
 
     <div class="search-box">
-      <input type="text" placeholder="Search by make or model">
+      <input type="text" placeholder="Search by make or model" />
       <select>
         <option>Any Price</option>
-        <option>0 - 50,000 NAD</option>
-        <option>50,000 - 150,000 NAD</option>
-        <option>150,000+ NAD</option>
       </select>
       <select>
         <option>Any City</option>
-        <option>Windhoek</option>
-        <option>Oshakati</option>
-        <option>Swakopmund</option>
       </select>
-
       <button class="search-btn">Search</button>
     </div>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>Featured Listings</h2>
+  <!-- LISTINGS -->
+  <section class="section">
+    <h2 class="section-title">Featured Listings</h2>
+    <div id="listing-area" class="card-grid"></div>
+  </section>
 
-    <div class="card-grid">
-
-      <!-- Golf 7 -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" />
-        <div class="car-info">
-          <h3>VW Golf 7</h3>
-          <p class="price">N$299,000</p>
-          <p>Clean,Make : VOLKSWAGEN, name: Golf 7 GTI 2015 model, Mileage:140km, Transmission:AT/DSG, Drive: 2 Wheel drive, Eng. Cap: 2.0 L fuel, Petrol, Available in Windhoek daily runner, papers in order.</p>
-          <a class="btn-primary" href="#">View Details</a>
-        </div>
-      </div>
-
-      <!-- Nissan Note -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1617814076826-ff3a5ec75ad5" />
-        <div class="car-info">
-          <h3>Nissan Note</h3>
-          <p class="price">N$40,000</p>
-          <p>Roadworthy, all papers in order, needs throttle body replacement.</p>
-          <a class="btn-primary" href="#">View Details</a>
-        </div>
-      </div>
-
-      <!-- Mercedes-Benz -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" />
-        <div class="car-info">
-          <h3>Mercedes-Benz C-Class</h3>
-          <p class="price">N$320,000</p>
-          <p>Luxury spec, low mileage placeholder.</p>
-          <a class="btn-primary" href="#">View Details</a>
-        </div>
-      </div>
-
-      <!-- BMW -->
-      <div class="car-card">
-        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e" />
-        <div class="car-info">
-          <h3>BMW 3 Series</h3>
-          <p class="price">N$280,000</p>
-          <p>M-Sport look, placeholder to attract eyes.</p>
-          <a class="btn-primary" href="#">View Details</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
+  <!-- FOOTER -->
   <footer>
-    © 2026 PrimeAuto Assist— All Rights Reserved
+    <h3>PrimeAuto Assist</h3>
+    <p>Namibia’s trusted car marketplace</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
-</html>
+                          </html>
