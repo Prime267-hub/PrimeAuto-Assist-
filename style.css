@@ -1,16 +1,21 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0b0b0b;
-  color: #f3f3f3;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Nav */
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* NAV */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 15px 25px;
   background: #000;
   border-bottom: 1px solid #222;
 }
@@ -19,22 +24,31 @@ body {
   font-size: 22px;
   font-weight: bold;
   color: gold;
-  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-links a {
   color: #ddd;
-  margin-left: 20px;
   text-decoration: none;
 }
+
 .nav-links a:hover {
   color: gold;
 }
 
-/* Hero */
+/* HERO */
 .hero {
-  background: linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.9)),
-  url('https://images.unsplash.com/photo-1503376780353-7e6692767b70');
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
+  url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
   background-size: cover;
   background-position: center;
   padding: 120px 20px;
@@ -43,17 +57,15 @@ body {
 
 .hero h1 {
   font-size: 38px;
-  margin-bottom: 10px;
 }
 
 .hero p {
+  margin: 15px 0 30px;
   color: #ccc;
-  margin-bottom: 25px;
 }
 
+/* SEARCH */
 .search-box {
-  max-width: 900px;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -67,42 +79,43 @@ body {
   border: 1px solid #333;
   color: white;
   border-radius: 6px;
-  width: 200px;
 }
 
 .search-btn {
-  padding: 12px 20px;
   background: gold;
-  border: none;
   color: black;
+  border: none;
+  padding: 12px 25px;
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
 }
 
-/* Sections */
+/* SECTION */
 .section {
-  padding: 40px 20px;
-  max-width: 1100px;
+  padding: 50px 20px;
+  max-width: 1200px;
   margin: auto;
 }
 
+.section-title {
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+/* CAR GRID */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
 
+/* CARD */
 .car-card {
   background: #0f0f0f;
   border: 1px solid #1f1f1f;
   border-radius: 14px;
   overflow: hidden;
-  transition: transform .2s ease;
-}
-
-.car-card:hover {
-  transform: translateY(-4px);
 }
 
 .car-card img {
@@ -118,48 +131,30 @@ body {
 .price {
   color: gold;
   font-weight: bold;
+  margin: 10px 0;
 }
 
 .btn-primary {
   display: inline-block;
-  padding: 10px 14px;
-  margin-top: 8px;
   background: gold;
   color: black;
-  border-radius: 8px;
+  padding: 10px 15px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
-  padding: 25px 10px;
+  padding: 30px 15px;
   text-align: center;
-  color: #aaa;
   border-top: 1px solid #222;
   background: #000;
 }
 
-.admin-form {
-  max-width: 400px;
-  margin-bottom: 30px;
-}
-
-.admin-form input {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin: 8px 0;
-}
-
-.admin-form button {
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-}
-
-#adminCarList div {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 }
