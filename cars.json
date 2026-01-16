@@ -53,14 +53,3 @@
     "image": "https://via.placeholder.com/400x300?text=PrimeAuto+Assist"
   }
 ]
-[
-  {
-    "make": "Audi",
-    "model": "A4",
-    "price": 255000,
-    "year": 2015,
-    "mileage": 140000,
-    "city": "Windhoek",
-    "image": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023"
-  }
-]
