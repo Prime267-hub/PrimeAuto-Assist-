@@ -25,7 +25,7 @@ function renderCars(list) {
         <p>${car.notes}</p>
         <a 
           class="btn-primary" 
-          href="https://wa.me/264XXXXXXXXX?text=I'm interested in the ${car.brand} ${car.title}"
+          href="https://wa.me/2640857746291?text=I'm interested in the ${car.brand} ${car.title}"
           target="_blank"
         >
           WhatsApp Seller
