@@ -1,3 +1,8 @@
+alert("SCRIPT LOADED");
+
+// Step 4: confirm cars exist
+console.log(cars);
+
 console.log("script loaded");
 
 fetch("cars.json")
