@@ -22,23 +22,23 @@ function renderCars() {
 }
 
 // Add car
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-  const newCar = {
+function addCar() {
+  const car = {
     make: document.getElementById("make").value,
     model: document.getElementById("model").value,
-    pridiv.innerHTML = `
-  
-ce: Number(document.getElementById("price").value),
-    year: Number(document.getElementById("year").value),
-    mileage: Number(document.getElementById("mileage").value),
+    price: document.getElementById("price").value,
+    year: document.getElementById("year").value,
+    mileage: document.getElementById("mileage").value,
     city: document.getElementById("city").value,
-    image: document.getElementById("image").value || ""
+    image: document.getElementById("image").value
   };
-  cars.push(newCar);
-  renderCars();
-  form.reset();
-});
+
+  const cars = JSON.parse(localStorage.getItem("cars")) || [];
+  cars.push(car);
+  localStorage.setItem("cars", JSON.stringify(cars));
+
+  alert("Car added successfully!");
+}
 
 // Delete car
 function deleteCar(index) {
