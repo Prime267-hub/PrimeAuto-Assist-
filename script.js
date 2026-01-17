@@ -1,41 +1,30 @@
-alert("SCRIPT LOADED");
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("listing-area");
+  if (!container) return;
 
-// Step 4: confirm cars exist
-console.log(cars);
+  const cars = JSON.parse(localStorage.getItem("cars")) || [];
 
-console.log("script loaded");
+  if (cars.length === 0) {
+    container.innerHTML = "<p>No listings available yet.</p>";
+    return;
+  }
 
-fetch("./cars.json")
-  .then(response => response.json())
-  .then(cars => {
-    const container = document.getElementById("listing-area");
+  container.innerHTML = "";
 
-    if (!container) {
-      console.error("Listing container not found");
-      return;
-    }
+  cars.slice(0, 6).forEach(car => {
+    const card = document.createElement("div");
+    card.className = "car-card";
 
-    container.innerHTML = "";
+    card.innerHTML = `
+      <img src="${car.image}" alt="${car.make} ${car.model}">
+      <h3>${car.make} ${car.model}</h3>
+      <p><strong>Price:</strong> N$ ${car.price}</p>
+      <p><strong>Year:</strong> ${car.year}</p>
+      <p><strong>Mileage:</strong> ${car.mileage} km</p>
+      <p><strong>City:</strong> ${car.city}</p>
+    `;
 
-    cars.slice(0, 6).forEach(car => {
-      const card = document.createElement("div");
-      card.className = "car-card";
-
-      card.innerHTML = `
-        <img src="${car.image}" alt="${car.make} ${car.model}">
-        <h3>${car.make} ${car.model}</h3>
-        <p><strong>Price:</strong> N$ ${car.price}</p>
-        <p><strong>Year:</strong> ${car.year}</p>
-        <p><strong>Mileage:</strong> ${car.mileage} km</p>
-        <p><strong>City:</strong> ${car.city}</p>
-      `;
-
-      container.appendChild(card);
-    });
-  })
-  .catch(error => {
-    console.error("Error loading cars:", error);
-    <img src="${car.image}" 
-     alt="${car.make} ${car.model}"
-     onerror="this.src='https://via.placeholder.com/400x250?text=No+Image'">
+    container.appendChild(card);
   });
+});
+
