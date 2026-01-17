@@ -5,7 +5,7 @@ console.log(cars);
 
 console.log("script loaded");
 
-fetch("cars.json")
+fetch("./cars.json")
   .then(response => response.json())
   .then(cars => {
     const container = document.getElementById("listing-area");
