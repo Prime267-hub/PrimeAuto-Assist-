@@ -208,3 +208,7 @@ footer {
   margin: 10px 0 5px;
   color: gold;
 }
+input, select {
+  color: #000;
+  background: #fff;
+}
